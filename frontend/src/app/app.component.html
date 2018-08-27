@@ -1,0 +1,52 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="example-toolbar">
+    <div fxFlex class="text-left logo-div">
+      <a href="/">
+        <img *ngIf="darkTheme; else darkLogo" src="../../../assets/brand/logo.png">
+        <ng-template #darkLogo>
+          <img src="../../../assets/brand/logo.png">
+        </ng-template>
+      </a>
+    </div>
+    <span fxFlex></span>
+    <button mat-button>Contact Us</button>
+    <button mat-button>Help</button>
+    <p>
+      Marianna    
+    </p>
+      <img src="assets/avatars/4040.png" class="cursor-pointer push-left-sm" [matMenuTriggerFor]="userMenu">
+      <mat-menu class="user-mat-menu" #userMenu="matMenu">
+        <mat-list>
+          <mat-list-item>
+            <img mat-list-avatar src="assets/avatars/4040.png">
+            <h4 matLine> Marianna Tannús Spirandelli </h4>
+            <p matLine>
+              <span>+55 61 99160-9793</span>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-menu>
+  </mat-toolbar>
+  
+  <mat-sidenav-container color="primary" class="example-sidenav-container"
+                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #sidenav opened [mode]="mobileQuery.matches ? 'over' : 'side'"
+                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+          <a mat-list-item href=""> Dashboard</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/risks">New Insurance</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item href="">Configs</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    <footer class="secondary-text-color">
+      <p>BriteCore Hiring Project</p>
+    </footer>
+  </mat-sidenav-container>
+</div>

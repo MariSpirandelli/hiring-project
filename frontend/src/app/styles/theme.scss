@@ -1,0 +1,14 @@
+@import '_color.mixins';
+@import 'sidenav.theme';
+@import '_mixins';
+@import '_variables';
+
+
+/************************************** MATERIAL BASIC STYLES **************************************/
+@include mat-core();
+
+/************************************** LIGHT THEME **************************************/
+@include angular-material-theme($light-app-theme);
+//Application custom theme style
+@include all-colors($light-app-theme);
+@include sidenav-theme($light-app-theme);

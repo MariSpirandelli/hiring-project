@@ -1,0 +1,17 @@
+@import '_color.mixins';
+
+@mixin sidenav-theme($theme) {
+  .mat-drawer{
+    background-color: background-color-3($theme);
+  }
+
+  .mat-drawer-container {
+    background-color: background-color($theme)
+  }
+}
+
+@mixin toolbar-theme($theme) {
+  .mat-toolbar{
+    background-color: background-color-2($theme);
+  }
+}

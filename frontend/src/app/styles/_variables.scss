@@ -1,0 +1,43 @@
+@import '~@angular/material/theming';
+/************************************** LIGHT THEME **************************************/
+$primary-text-color:   #212121;
+$second-text-color: White;
+$light-app-primary: mat-palette($mat-teal, 600);
+$light-app-primary-accent: mat-palette($mat-teal, 700);
+$light-app-accent:  mat-palette($mat-orange, 500);
+$light-app-warn:    mat-palette($mat-red, 400);
+
+$light-app-theme: mat-light-theme($light-app-primary, $light-app-accent, $light-app-warn);
+
+$light-app-theme-foreground: map_get($light-app-theme, foreground);
+$light-app-theme-foreground: map_merge($light-app-theme-foreground, (
+  base:            $primary-text-color,
+  divider:         rgba($primary-text-color, 0.12),
+  dividers:        rgba($primary-text-color, 0.12),
+  disabled:        rgba($primary-text-color, 0.38),
+  disabled-button: rgba($primary-text-color, 0.38),
+  disabled-text:   rgba($primary-text-color, 0.38),
+  hint-text:       rgba($primary-text-color, 0.38),
+  secondary-text:  rgba($primary-text-color, 0.54),
+  icon:            rgba($primary-text-color, 0.54),
+  icons:           rgba($primary-text-color, 0.54),
+  text:            rgba($primary-text-color, 0.87)
+));
+$light-app-theme: map_merge($light-app-theme, (foreground: $light-app-theme-foreground));
+
+$light-app-theme-background: map_get($light-app-theme, background);
+$light-app-theme-background: map_merge($light-app-theme-background, (
+  status-bar: map_get($mat-teal, 300),
+  app-bar:    map_get($mat-teal, 600),
+  background: map_get($mat-grey, 50),//Fundo central
+  background-2: White, //map_get($mat-red, 100),
+  background-3: Black,
+  background-4: map_get($mat-blue, 300),
+  hover:      rgba(black, 0.04),
+  card:       white,
+  dialog:     white,
+  disabled-button: rgba(black, 0.12),
+  raised-button: white
+));
+
+$light-app-theme: map_merge($light-app-theme, (background: $light-app-theme-background));
